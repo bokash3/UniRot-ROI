@@ -1,0 +1,14 @@
+# Versions used for the paper: Python 3.10+, PyTorch 2.5.1 (CUDA build), Ultralytics 8.3.55
+torch==2.5.1
+torchvision
+ultralytics==8.3.55
+segmentation-models-pytorch
+albumentations
+opencv-python
+numpy
+scipy
+pillow
+tqdm
+pyyaml
+# optional
+mediapipe          # MediaPipe baseline only

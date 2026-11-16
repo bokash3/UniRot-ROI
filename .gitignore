@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+data/
+datasets/
+checkpoints/
+experiments/out/
+experiments/runs*/
+experiments/analysis/inputs/
+experiments/analysis/results/
+labelling/second_annotator/data/
+*.pt
+*.pth
+*.onnx
+*.npz
+*.pkl

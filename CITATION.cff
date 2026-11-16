@@ -1,0 +1,49 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper."
+title: "UniRot-ROI: code for matched geometric augmentation and the cross-dataset evaluation of palm-vein ROI localisers"
+authors:
+  - family-names: Almaktari
+    given-names: Amani
+  - family-names: Bokash
+    given-names: Mohammed
+  - family-names: Ghaban
+    given-names: Wad
+  - family-names: Al-Hejri
+    given-names: Aymen M.
+  - family-names: Humbe
+    given-names: Vikas T.
+license: MIT
+version: 1.0.0
+date-released: 2026-11-16
+preferred-citation:
+  type: article
+  title: "Matched geometric augmentation changes the cross-dataset ranking of palm-vein ROI localisers"
+  authors:
+    - family-names: Almaktari
+      given-names: Amani
+    - family-names: Bokash
+      given-names: Mohammed
+    - family-names: Ghaban
+      given-names: Wad
+    - family-names: Al-Hejri
+      given-names: Aymen M.
+    - family-names: Humbe
+      given-names: Vikas T.
+  journal: "Scientific Reports"
+  status: submitted
+references:
+  - type: article
+    title: "UniRotNet: mask-only canonical alignment for contactless palm ROI localization"
+    authors:
+      - family-names: Almaktari
+        given-names: Amani A.
+      - family-names: Bokash
+        given-names: Mohammed
+      - family-names: Humbe
+        given-names: Vikas T.
+    journal: "International Journal of Innovative Research in Technology"
+    volume: 13
+    issue: 6
+    start: 2233
+    end: 2252
+    year: 2026

@@ -1,0 +1,40 @@
+seed: 42
+
+data:
+  images_dir: "data/images"
+  masks_dir: "data/masks"        # optional
+  angles_json: "data/angles.json"
+  img_size: [576, 768]                   # H, W
+  grayscale_for_rot: true
+  normalize_mean: [0.485, 0.456, 0.406]
+  normalize_std:  [0.229, 0.224, 0.225]
+
+split:
+  split_json: "config/splits/subject_split.json"
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  seeds: [42, 2025, 1337]
+
+seg:
+  encoder: "resnet34"           # or mobilenet_v2
+  batch_size: 8
+  epochs: 100
+  lr: 3.0e-4
+  weight_decay: 1.0e-4
+  amp: true
+  patience: 8
+  outdir: "runs/seg_resnet34_42"
+
+rot:
+  mode: "both"                  # cls | reg | both
+  num_bins: 36                  # 10° per bin for 360° range
+  batch_size: 32
+  epochs: 100
+  lr: 3.0e-4
+  weight_decay: 1.0e-4
+  amp: true
+  patience: 15
+  outdir: "runs/rot_both_resnet18_42"
+  use_pred_masks: true
+  pred_masks_dir: "preds/seg_resnet34_42"
