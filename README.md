@@ -6,7 +6,7 @@ Code for the paper
 
 UniRot-ROI uses the three networks of UniRotNet, introduced in
 
-> A. Almaktari, M. Bokash and V. T. Humbe, UniRotNet: rotation-invariant palm ROI extraction, *International Journal of Innovative Research in Technology* **13**(6), 2233–2252 (2026).
+> A. Almaktari, M. Bokash and V. T. Humbe, UniRotNet: UniRotNet: mask-only canonical alignment for contactless palm ROI localization, *International Journal of Innovative Research in Technology* **13**(6), 2233–2252 (2026).
 
 The repository contains everything used to produce the results of the paper: data splitting, the labelling tools, training of the three stages of UniRot-ROI and of every compared localiser, the label-consistent ("matched") augmentation and its self-check, inference, the geometric and recognition evaluation on CASIA-MS, VERA Palmvein and SCUT-PV, and the statistics (paired bootstrap, Holm, McNemar, TAR at fixed FAR).
 
