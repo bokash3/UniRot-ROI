@@ -1,5 +1,5 @@
 # run_extra.ps1
-# Two control experiments for the reviewers (evaluation code identical to the paper):
+# Two control experiments (evaluation code identical to the paper):
 #  (1) fairness of initialisation: YOLOv8n-pose initialised from the official COCO-pretrained weights
 #      (yolov8n-pose.pt) and trained with the augmented recipe -> CASIA-MS, VERA, SCUT-PV, recognition
 #  (2) is it the alignment or only the augmentation? the raw-frame regressors of the 2x2 design (no alignment;

@@ -2,7 +2,7 @@
 """
 baseline_mediapipe.py - MediaPipe Hands as an off-the-shelf palm localiser (zero-shot, no training on palm images)
 =================================================================================================================
-Requested by reviewers (external baseline). MediaPipe Hands (Zhang et al. 2020) returns 21 hand landmarks for visible-light
+External baseline. MediaPipe Hands (Zhang et al. 2020) returns 21 hand landmarks for visible-light
 RGB hands. Here the NIR image is fed as grey RGB, the highest-scoring hand is kept, and a palm square is derived from four
 landmarks: wrist (0) and the knuckles of index (5), middle (9), ring (13) and little finger (17).
 

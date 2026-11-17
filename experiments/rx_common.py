@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-rx_common.py — shared helpers for the reviewer experiments.
+rx_common.py — shared helpers for the experiments in this folder.
 
 Coordinate conventions (identical to the existing project code):
   * Images / masks live on a W x H canvas (CASIA: 768 x 576).

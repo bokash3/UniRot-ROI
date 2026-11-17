@@ -2,7 +2,7 @@
 """
 xd_valley.py - the calibrated valley-point baseline (valley+offset) on VERA and SCUT-PV, without adaptation
 ============================================================================================================
-Requested by reviewers: the valley-point method was evaluated in-domain only. Here, for every seed:
+Cross-dataset evaluation of the valley-point baseline (otherwise evaluated in-domain only). For every seed:
   1. Stage I (that seed's original-recipe U-Net, as in xd_eval.py) segments the image in the CASIA frame;
   2. finger valleys are found on the mask (baseline_valley_points.find_valleys);
   3. the square is placed with the offsets calibrated on the CASIA-MS TRAIN split of the seed

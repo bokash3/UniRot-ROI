@@ -34,7 +34,7 @@ Everything is SAVED (out_dir/<ds>/<source>_seed<S>/):
 out_dir/<ds>/compare_sources.jpg   the same images cropped by every source side by side
 out_dir/results_xmatch.csv  +  results_xmatch_summary.csv  (mean +- std over seeds)
 
-Examples (Windows, from reviewer_experiments)
+Examples (Windows, from experiments)
   python xd_match.py --calibrate_mc --casia_images ../data/casia/images ^
          --casia_labels out\\labels_oriented\\seed42\\train_labels.json
   python xd_match.py --datasets vera,scut

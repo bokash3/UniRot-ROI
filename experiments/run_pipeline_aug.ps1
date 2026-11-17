@@ -1,5 +1,5 @@
 # run_pipeline_aug.ps1
-# One batch for the reviewers' main request: the mask-aligned pipeline trained with the SAME strong
+# One batch: the mask-aligned pipeline trained with the SAME strong
 # augmentation as the augmented YOLOv8n-pose (3 stages x 3 seeds), evaluated exactly like the original
 # pipeline, plus (optional) an epoch-matched control for the detector (light recipe, 100 epochs).
 #

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-make_rx_data.py — build the data needed by the reviewer experiments.
+make_rx_data.py — build the data needed by the experiments in this folder.
 
 Sub-commands
 ------------

@@ -6,7 +6,7 @@ Code for the paper
 
 UniRot-ROI uses the three networks of UniRotNet, introduced in
 
-> A. Almaktari, M. Bokash and V. T. Humbe, UniRotNet: rotation-invariant palm ROI extraction, *International Journal of Innovative Research in Technology* **13**(6), 2233–2252 (2026).
+> A. Almaktari, M. Bokash and V. T. Humbe, UniRotNet: mask-only canonical alignment for contactless palm ROI localization, *International Journal of Innovative Research in Technology* **13**(6), 2233–2252 (2026).
 
 The repository contains everything used to produce the results of the paper: data splitting, the labelling tools, training of the three stages of UniRot-ROI and of every compared localiser, the label-consistent ("matched") augmentation and its self-check, inference, the geometric and recognition evaluation on CASIA-MS, VERA Palmvein and SCUT-PV, and the statistics (paired bootstrap, Holm, McNemar, TAR at fixed FAR).
 
@@ -30,7 +30,6 @@ experiments/              everything after the basic models: matched augmentatio
                           analysis/: removal of constant label offsets and the Holm families of Supplementary Data 1
 docs/NAMES.md             internal names used in file names and code → names used in the paper
 docs/DATA.md              expected data layout and the licence conditions of the three datasets
-tools/                    helpers for the release (collecting models and labels, checksums)
 ```
 
 ## Installation
@@ -116,18 +115,18 @@ powershell -ExecutionPolicy Bypass -File .\run_pipeline_aug.ps1 -Step selfcheck 
 powershell -ExecutionPolicy Bypass -File .\run_pipeline_aug.ps1                  # trains the three stages for the three seeds and evaluates them
 ```
 
-`train_pipeline_aug.py` contains the matched augmentation for each stage (Supplementary Algorithm S1) and the self-check.
+`train_pipeline_aug.py` contains the matched augmentation for each stage (Supplementary Algorithm S2) and the self-check.
 
 ### 4. Compared localisers and ablations
 
 | Paper | Runner step / script |
 |---|---|
-| YOLO-basic, YOLO-matched, YOLO-matched-PT, YOLO-basic-100 | `run_reviewer_experiments.ps1 -Step yolo_pose`, `run_extra.ps1 -Step yolo`, `run_pipeline_aug.ps1 -Step light100` (`baseline_yolo.py`) |
+| YOLO-basic, YOLO-matched, YOLO-matched-PT, YOLO-basic-100 | `run_experiments.ps1 -Step yolo_pose`, `run_extra.ps1 -Step yolo`, `run_pipeline_aug.ps1 -Step light100` (`baseline_yolo.py`) |
 | Detector training seeds (nine runs of YOLO-matched and YOLO-matched-PT) | `run_T2.ps1` (`baseline_yolo.py --train_seed`) |
 | Larger pretrained detectors (YOLOv8s-pose-PT, YOLOv8m-pose-PT) | `run_A1.ps1` |
-| Valley baseline | `run_reviewer_experiments.ps1 -Step valley` (`baseline_valley_points.py`, `xd_valley.py`) |
+| Valley baseline | `run_experiments.ps1 -Step valley` (`baseline_valley_points.py`, `xd_valley.py`) |
 | MediaPipe baseline | `baseline_mediapipe.py` |
-| 2×2 ablation (input × frame), basic augmentation | `run_reviewer_experiments.ps1 -Step A`, `B`, `C`, `summary` (`train_roi_2x2.py`, `eval_checkpoints.py`) |
+| 2×2 ablation (input × frame), basic augmentation | `run_experiments.ps1 -Step A`, `B`, `C`, `summary` (`train_roi_2x2.py`, `eval_checkpoints.py`) |
 | 2×2 raw-frame cells with matched augmentation | `run_extra.ps1 -Step raw` (`train_raw_aug.py`) |
 | Stage swap (which stage needs augmentation) | `run_stage_swap.ps1` (`full_pipeline_eval.py`) |
 | Principal-axis angle baseline | `eval_pca_rotation.py` |
@@ -136,10 +135,10 @@ powershell -ExecutionPolicy Bypass -File .\run_pipeline_aug.ps1                 
 
 ```powershell
 cd experiments
-powershell -ExecutionPolicy Bypass -File .\run_reviewer_experiments.ps1 -Step xd_prep       # fixed 90° rotation + letter-box to the CASIA-MS frame
-powershell -ExecutionPolicy Bypass -File .\run_reviewer_experiments.ps1 -Step xd_eval       # geometry on the labelled images
-powershell -ExecutionPolicy Bypass -File .\run_reviewer_experiments.ps1 -Step xmatch_calib  # Maximum Curvature scale on CASIA-MS training identities
-powershell -ExecutionPolicy Bypass -File .\run_reviewer_experiments.ps1 -Step xmatch        # CompCode, ResNet-18 and vein matcher
+powershell -ExecutionPolicy Bypass -File .\run_experiments.ps1 -Step xd_prep       # fixed 90° rotation + letter-box to the CASIA-MS frame
+powershell -ExecutionPolicy Bypass -File .\run_experiments.ps1 -Step xd_eval       # geometry on the labelled images
+powershell -ExecutionPolicy Bypass -File .\run_experiments.ps1 -Step xmatch_calib  # Maximum Curvature scale on CASIA-MS training identities
+powershell -ExecutionPolicy Bypass -File .\run_experiments.ps1 -Step xmatch        # CompCode, ResNet-18 and vein matcher
 ```
 
 The ResNet-18 matcher is trained with `train_resnet18_matcher.py` on the training and validation identities of each seed (manifests from `build_matching_manifests_v4.py`); CompCode and the vein matcher (`vein_extract.py`, Miura matching) need no training.

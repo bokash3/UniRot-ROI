@@ -2,7 +2,7 @@
 """
 train_pipeline_aug.py — re-train the three stages of the mask-aligned pipeline with the strong
 augmentation recipe that was given to YOLOv8n-pose ("augmented recipe"), so that the
-pipeline-vs-detector comparison can be made under matched augmentation (reviewers' main request).
+pipeline-vs-detector comparison can be made under matched augmentation.
 
 Only the augmentation changes (plus Stage III epochs 50 -> 100, matching the detector's 50 -> 100).
 Data, subject splits, architectures, initialisation, losses, optimisers, schedules, batch sizes

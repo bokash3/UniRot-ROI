@@ -24,7 +24,7 @@ data/casia/
 datasets/
   VERA-Palmvein/raw/               VERA images as distributed
   SCUT_PV_V1/                      SCUT-PV images as distributed (and its ROI folder for the released ROI)
-checkpoints/basic/                 Pipeline-basic models (see tools/collect_release_assets.py for the file names)
+checkpoints/basic/                 Pipeline-basic models (file names in docs/NAMES.md)
 ```
 
 `experiments/xd_prep.py` brings every VERA and SCUT-PV image to the CASIA-MS frame with one fixed affine transform per

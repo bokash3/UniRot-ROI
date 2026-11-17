@@ -1,9 +1,9 @@
-# run_reviewer_experiments.ps1
-# Runs the experiments requested by the reviewers (see README.md).
+# run_experiments.ps1
+# Runs the main experiments of the paper (see README.md).
 #
 # Usage (from experiments):
-#   powershell -ExecutionPolicy Bypass -File .\run_reviewer_experiments.ps1            # everything
-#   powershell -ExecutionPolicy Bypass -File .\run_reviewer_experiments.ps1 -Step pca  # one step
+#   powershell -ExecutionPolicy Bypass -File .\run_experiments.ps1            # everything
+#   powershell -ExecutionPolicy Bypass -File .\run_experiments.ps1 -Step pca  # one step
 #
 # Steps: prep | pca | A | B | C | D | summary | match | valley | yolo_pose | yolo_obb | fullpipe | yolo_qc | xd_prep | xd_prep_more | xd_label_casia2 | xd_label_vera | xd_label_scut | xd_label_casia | xd_eval | xmatch_calib | xmatch | fp32_rerun | all
 # Training time: roughly 2-3 h per cell and seed on an RTX 3080 (A, B, C: 9 runs).
